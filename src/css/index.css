@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'articulat-cf';
+  src: url('../assets/fonts/ArticulatCF-Normal.ttf') format('truetype'), url('../assets/fonts/ArticulatCF-Bold.ttf') format('truetype');
+}
+
 :root {
   /* font stuff */
   --font-size-basis: 1rem;
@@ -9,14 +14,16 @@
   --h2: calc(var(--h3) * var(--type-scale));
   --h1: calc(var(--h2) * var(--type-scale));
   --font-small: calc(0.667rem);
-  --font-family: 'Open Sans', sans-serif;
+  --font-family: 'articulat-cf', sans-serif;
   /* colors */
-
+  --primary-color: #2C1F36;
 }
 
 html {
   font-size: 100%;
   font-family: var(--font-family);
+  box-sizing: border-box;
+  color: var(--primary-color);
 }
 
 ul {
@@ -51,10 +58,12 @@ p {
   font-size: var(--font-size-basis);
 }
 
-/* ::-moz-selection {
+::-moz-selection {
   background-color: var(--primary-color);
+  color: #fff;
 }
 
 ::selection {
   background-color: var(--primary-color);
-} */
+  color: #fff;
+}
