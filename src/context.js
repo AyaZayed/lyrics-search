@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 
 export const Context = React.createContext()
 
-export function Provider({ children }) {
+export function ContextController({ children }) {
     const [state, setState] = useState({
         track_list: [],
         heading: 'Top 10 Tracks'

@@ -1,16 +1,20 @@
 import React from 'react'
 import { useContext } from 'react'
-
-import Context from '../context'
+import { Context } from '../context'
+import Track from './Track'
 
 export default function Tracks() {
-    // const [state] = useContext(Context)
-    // const { track_list, heading } = state
+    const [state] = useContext(Context)
+    const { track_list, heading } = state
 
-    // console.log(Context, state, track_list, heading)
-
-    console.log(Context)
     return (
-        <div>Tracks</div>
+        <div className='track-list'>
+            <h3 className='text-center mb-4'>{heading}</h3>
+            <div className='row'>
+                {track_list.map(tr => (
+                    <Track key={tr.track.track_id} track={tr} />
+                ))}
+            </div>
+        </div>
     )
 }
