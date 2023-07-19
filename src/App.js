@@ -9,10 +9,12 @@ export default function App() {
   return (
     <ContextController>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/lyrics/track/:id" element={<Lyrics />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Layout />} />
+          <Route path="/lyrics/track/:id" element={<Lyrics />} />
+        </Routes>
+      </main>
     </ContextController>
   )
 }

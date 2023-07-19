@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { useState, useEffect } from 'react'
 import { Context } from '../context'
 import { AiOutlineSearch } from 'react-icons/ai'
+import Spinner from './layouts/Spinner'
 
 export default function Search() {
     const [state, setState] = useContext(Context)
@@ -38,7 +39,10 @@ export default function Search() {
                     <input type='text' id='search' placeholder='Search for a song...'
                         onChange={e => setUserInput(e.target.value)} />
                 </label>
-                <button type='submit'>Search</button>
+                <button
+                    className='primary-button'
+                    disabled={userInput.length < 1 ? true : false}
+                    type='submit'>Search</button>
             </form>
         </div>
     )
