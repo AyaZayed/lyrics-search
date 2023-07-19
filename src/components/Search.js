@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useState, useEffect } from 'react'
 import { Context } from '../context'
+import { AiOutlineSearch } from 'react-icons/ai'
 
 export default function Search() {
     const [state, setState] = useContext(Context)
@@ -26,14 +27,17 @@ export default function Search() {
     function findTrack(e) {
         e.preventDefault()
         setTrackTitle(userInput)
-
     }
 
     return (
         <div className='search-box'>
+            <h1> Search for a song</h1>
             <form onSubmit={findTrack}>
-                <input type='text' placeholder='Search for a song...'
-                    onChange={e => setUserInput(e.target.value)} />
+                <label htmlFor='search'>
+                    <AiOutlineSearch />
+                    <input type='text' id='search' placeholder='Search for a song...'
+                        onChange={e => setUserInput(e.target.value)} />
+                </label>
                 <button type='submit'>Search</button>
             </form>
         </div>

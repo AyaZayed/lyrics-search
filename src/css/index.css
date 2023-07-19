@@ -58,6 +58,16 @@ p {
   font-size: var(--font-size-basis);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
 ::-moz-selection {
   background-color: var(--primary-color);
   color: #fff;
