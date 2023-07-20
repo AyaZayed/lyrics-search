@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { useState, useEffect } from 'react'
 import { Context } from '../context'
 import { AiOutlineSearch } from 'react-icons/ai'
-import Spinner from './layouts/Spinner'
 
 export default function Search() {
     const [state, setState] = useContext(Context)

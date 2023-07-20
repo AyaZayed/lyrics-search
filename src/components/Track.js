@@ -8,7 +8,7 @@ export default function Track({ track }) {
             <h4>{track.track.track_name}</h4>
             <h6><strong>Artist:</strong> {track.track.artist_name}</h6>
             <h6><strong>Album:</strong> {track.track.album_name}</h6>
-            <Link to={`lyrics/track/${track.track.track_id}`}>
+            <Link to={`lyrics/track/${track.track.track_id}`} state={track}>
                 <button className='primary-button'>
                     {/* react-icon MdLyrics */}
                     <MdLyrics />
