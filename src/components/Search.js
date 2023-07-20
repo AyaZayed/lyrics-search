@@ -8,7 +8,7 @@ export default function Search() {
     const [trackTitle, setTrackTitle] = useState('')
     const [userInput, setUserInput] = useState('')
 
-    const apiKey = '604ddddfa811aca1e00981f54dd6e60b';
+    const apiKey = process.env.REACT_APP_MM_KEY;
 
     useEffect(() => {
         if (userInput) {

@@ -1,17 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
+import Spinner from './layouts/Spinner'
 
 export default function Lyrics() {
     const [lyrics, setLyrics] = useState('')
 
-    const apiKey = '604ddddfa811aca1e00981f54dd6e60b';
+    const apiKey = process.env.REACT_APP_MM_KEY;
 
     const trackId = useParams().id
     const location = useLocation()
 
     const track = location.state.track
-
-    console.log(track)
 
     useEffect(() => {
         fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${trackId}&apikey=${apiKey}`)
@@ -36,12 +35,17 @@ export default function Lyrics() {
         )
     }
 
-    return (
-        <div className='lyrics'>
-            <h2>{track.track_name} by {track.artist_name}</h2>
-            <h5>Album: {track.album_name}</h5>
-            <h5>Explicit Words: {track.explicit}</h5>
-            {formatLyrics()}
-        </div>
+    if (!track || !lyrics) return (
+        <Spinner />
     )
+    else {
+        return (
+            <div className='lyrics'>
+                <h2>{track.track_name} by {track.artist_name}</h2>
+                <h5>Album: {track.album_name}</h5>
+                <h5>Explicit Words: {track.explicit}</h5>
+                {formatLyrics()}
+            </div>
+        )
+    }
 }

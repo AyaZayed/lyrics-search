@@ -9,7 +9,7 @@ export function ContextController({ children }) {
         heading: 'Top 10 Tracks'
     })
 
-    const apiKey = '604ddddfa811aca1e00981f54dd6e60b';
+    const apiKey = process.env.REACT_APP_MM_KEY;
 
     // musixmatch api
     useEffect(() => {
